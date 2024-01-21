@@ -21,7 +21,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="flex">
           <Nav />
-          {children}
+          <div className="w-[calc(100vw-100px)] flex justify-center items-center">
+            {children}
+          </div>
         </div>
       </body>
     </html>

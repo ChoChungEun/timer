@@ -9,16 +9,11 @@ const NAV_LIST = [
 
 const Nav = () => {
   const pathname = usePathname();
-
-  const navList = NAV_LIST;
-
   const newPathname = pathname.replace("/", "");
-
-  console.log("newPathname", newPathname);
 
   return (
     <ul className="w-[100px] h-[100vh] bg-[#212226]">
-      {navList.map((nav, idx) => {
+      {NAV_LIST.map((nav, idx) => {
         const isActive = newPathname === nav.value;
         const isHome = newPathname === "" && nav.value === "timer";
         const activeStyles =
