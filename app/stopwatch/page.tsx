@@ -1,4 +1,4 @@
-import Stopwatch from "@/components/Stopwatch";
+import { Stopwatch } from "@/components/Stopwatch";
 
 const StopWatch = () => {
   return (
