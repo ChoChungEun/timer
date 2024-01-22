@@ -1,31 +1,39 @@
 "use client";
-import React from "react";
-import { useStopwatch } from "react-timer-hook";
+import React, { useState, useRef, FunctionComponent } from "react";
 
-const StopWatch = () => {
-  const {
-    totalSeconds,
-    seconds,
-    minutes,
-    hours,
-    days,
-    isRunning,
-    start,
-    pause,
-    reset,
-  }: any = useStopwatch({ autoStart: true });
+const StopWatch: FunctionComponent = () => {
+  const [timer, setTimer] = useState<number>(0);
+  const countRef = useRef<NodeJS.Timeout | null>(null);
 
-  const newValue = (value: any) =>
-    value < 10 && value >= 0 ? "0" + value : value;
+  const handleStart = () => {
+    countRef.current = setInterval(() => {
+      setTimer((timer) => timer + 1);
+    }, 1000);
+  };
+
+  const handlePause = () => {
+    clearInterval(countRef.current!);
+  };
+
+  const handleReset = () => {
+    clearInterval(countRef.current!);
+    setTimer(0);
+  };
+
+  const hours = Math.floor(timer / 3600);
+  const minutes = Math.floor((timer % 3600) / 60);
+  const seconds = timer % 60;
 
   return (
     <div>
-      <div className="font-timer text-[128px]">
-        <span>{newValue(minutes)}</span>:<span>{newValue(seconds)}</span>
-      </div>
-      <button onClick={start}>Start</button>
-      <button onClick={pause}>Pause</button>
-      <button onClick={reset}>Reset</button>
+      <p className="font-timer text-[128px]">{`${hours
+        .toString()
+        .padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds
+        .toString()
+        .padStart(2, "0")}`}</p>
+      <button onClick={handleStart}>Start</button>
+      <button onClick={handlePause}>Pause</button>
+      <button onClick={handleReset}>Reset</button>
     </div>
   );
 };
