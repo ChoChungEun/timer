@@ -22,9 +22,14 @@ const Nav = () => {
         return (
           <li
             key={idx}
-            className={`${activeStyles} flex items-center justify-center h-[74px] text-[14px] text-[#c2c7d0] font-[600]`}
+            className={`${activeStyles} h-[74px] text-[14px] text-[#c2c7d0] font-[600]`}
           >
-            <Link href={nav.href}>{nav.name}</Link>
+            <Link
+              href={nav.href}
+              className="w-[100%] h-[100%] flex items-center justify-center"
+            >
+              {nav.name}
+            </Link>
           </li>
         );
       })}
