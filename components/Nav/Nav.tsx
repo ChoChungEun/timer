@@ -3,8 +3,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NAV_LIST = [
-  { name: "Timer", href: "/", value: "timer" },
-  { name: "Stopwatch", href: "stopwatch", value: "stopwatch" },
+  // { name: "Timer", href: "/", value: "timer" },
+  // { name: "Stopwatch", href: "/stopwatch", value: "stopwatch" },
+  { name: "CityClock", href: "/", value: "cityClock" },
 ];
 
 const Nav = () => {
@@ -12,7 +13,7 @@ const Nav = () => {
   const newPathname = pathname.replace("/", "");
 
   return (
-    <ul className="w-[100px] h-[100vh] bg-[#212226]">
+    <ul className="w-[120px] h-[100vh] bg-[#212226]">
       {NAV_LIST.map((nav, idx) => {
         const isActive = newPathname === nav.value;
         const isHome = newPathname === "" && nav.value === "timer";

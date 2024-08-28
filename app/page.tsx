@@ -1,15 +1,6 @@
 "use client";
-import { Nav } from "@/components/Nav";
-import Timer from "@/components/Timer";
-import { MantineProvider } from "@mantine/core";
-import { RecoilRoot } from "recoil";
+import CityClock from "@/components/CityClock";
 
 export default function Home() {
-  return (
-    <RecoilRoot>
-      <MantineProvider>
-        <Timer />
-      </MantineProvider>
-    </RecoilRoot>
-  );
+  return <CityClock />;
 }

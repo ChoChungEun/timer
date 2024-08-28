@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import "@mantine/core/styles.css";
 import { Nav } from "@/components/Nav";
+import RecoilProvider from "./RecoilProvider";
+import MantineProvider from "./MantineProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,10 +22,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="flex">
-          <Nav />
-          <div className="w-[calc(100vw-100px)] flex justify-center items-center">
-            {children}
-          </div>
+          <RecoilProvider>
+            <MantineProvider>
+              <Nav />
+              <div className="w-[100%] h-[100vh]">{children}</div>
+            </MantineProvider>
+          </RecoilProvider>
         </div>
       </body>
     </html>

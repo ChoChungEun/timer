@@ -55,15 +55,12 @@ const Timer: FunctionComponent = () => {
   }, [stopTimer, setTime, initTime]);
 
   useEffect(() => {
-    console.log("isRunning", isRunning);
-
     if (isRunning) {
       timerId.current = setInterval(() => {
         setTime((prevTime) => {
           if (prevTime.seconds <= 0) {
             if (prevTime.minutes <= 0) {
               if (prevTime.hours <= 0) {
-                // Stop the timer when it reaches 0
                 stopTimer();
                 return prevTime;
               } else {
@@ -99,18 +96,17 @@ const Timer: FunctionComponent = () => {
         <span>{formatValue(time.seconds)}</span>
       </div>
       <div className="flex gap-[4px]">
-        <Button variant="outline" onClick={startTimer} className="!w-[33.333%]">
-          Start
-        </Button>
-        <Button variant="outline" onClick={stopTimer} className="!w-[33.333%]">
-          Pause
-        </Button>
-        <Button
-          variant="outline"
-          onClick={restartTimer}
-          className="!w-[33.333%]"
-        >
-          Restart
+        {!isRunning ? (
+          <Button variant="outline" onClick={startTimer} className="!w-[50%]">
+            Start
+          </Button>
+        ) : (
+          <Button variant="outline" onClick={stopTimer} className="!w-[50%]">
+            Pause
+          </Button>
+        )}
+        <Button variant="outline" onClick={restartTimer} className="!w-[50%]">
+          Reset
         </Button>
       </div>
     </div>
