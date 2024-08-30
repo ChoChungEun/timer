@@ -4,7 +4,7 @@ import moment from "moment-timezone";
 import "react-clock/dist/Clock.css";
 import { Clock as ReClock } from "react-clock";
 
-const Clock = ({ city }: { city: string }) => {
+const Clock = ({ area, location }: any) => {
   const [date, setDate] = useState<string | null>(null);
   const [year, setYear] = useState<string | null>(null);
   const [day, setDay] = useState<string | null>(null);
@@ -16,9 +16,11 @@ const Clock = ({ city }: { city: string }) => {
       try {
         // API 호출하여 현재 UTC 시간 가져오기
         const response = await axios.get(
-          `http://worldtimeapi.org/api/timezone/${city}`
+          `http://worldtimeapi.org/api/timezone/${area}/${location}`
         );
-        const datetime = moment(response.data.datetime).tz(city);
+        const datetime = moment(response.data.datetime).tz(
+          `${area}/${location}`
+        );
 
         setYear(datetime.format("YYYY"));
         setDate(datetime.format("MMMM D"));
@@ -33,7 +35,7 @@ const Clock = ({ city }: { city: string }) => {
 
     // 매초마다 시간을 업데이트
     const interval = setInterval(() => {
-      const now = moment().tz(city);
+      const now = moment().tz(`${area}/${location}`);
       setYear(now.format("YYYY"));
       setDate(now.format("MMMM D"));
       setDay(now.format("dddd"));
@@ -41,7 +43,7 @@ const Clock = ({ city }: { city: string }) => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [city]);
+  }, [area, location]);
 
   if (error) return <div>{error}</div>;
 

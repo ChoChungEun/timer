@@ -1,1 +1,1 @@
-export { default } from "./CityClock";
+export { default } from "./Layout";

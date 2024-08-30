@@ -1,46 +1,40 @@
 import styled from "styled-components";
 import Clock from "./Clock";
+import { cities } from "./cities";
 
-const cities = [
-  {
-    name: "Seoul",
-    city: "Asia/Seoul",
-    imageName: "south-korea",
-  },
-  {
-    name: "Tokyo",
-    city: "Asia/Tokyo",
-    imageName: "japan",
-  },
-  {
-    name: "NewYork",
-    city: "America/New_York",
-    imageName: "united-kingdom",
-  },
-  {
-    name: "London",
-    city: "Europe/London",
-    imageName: "united-states-of-america",
-  },
-];
-
-const CityClock = () => {
+const CityClock = ({ selectedCity, onSelectedCity }: any) => {
   return (
-    <div className="grid grid-cols-2 grid-rows-2 h-[100vh]">
-      {cities.map((city, idx) => (
+    <>
+      {selectedCity ? (
         <RootStyle
-          key={idx}
-          className="relative flex items-center justify-center border-[1px]"
-          backgroundImage={`/images/flags/${city.imageName}.png`}
+          className="relative flex items-center justify-center border-[1px] h-[100vh]"
+          backgroundImage={`/images/flags/${selectedCity.imageName}.png`}
         >
           <div className="absolute top-0 right-0 bottom-0 left-0 bg-cover bg-center bg-no-repeat z-[1]" />
           <div className="flex flex-col items-center z-[2]">
-            <span className="text-[20px] font-[500]">{city.name}</span>
-            <Clock city={city.city} />
+            <span className="text-[20px] font-[500]">{selectedCity.name}</span>
+            <Clock area={selectedCity.area} location={selectedCity.location} />
           </div>
         </RootStyle>
-      ))}
-    </div>
+      ) : (
+        <div className="grid grid-cols-2 grid-rows-2 h-[100vh]">
+          {cities.map((city, idx) => (
+            <RootStyle
+              key={idx}
+              className="relative flex items-center justify-center border-[1px]"
+              backgroundImage={`/images/flags/${city.imageName}.png`}
+              onClick={() => onSelectedCity(city)}
+            >
+              <div className="absolute top-0 right-0 bottom-0 left-0 bg-cover bg-center bg-no-repeat z-[1]" />
+              <div className="flex flex-col items-center z-[2]">
+                <span className="text-[20px] font-[500]">{city.name}</span>
+                <Clock area={city.area} location={city.location} />
+              </div>
+            </RootStyle>
+          ))}
+        </div>
+      )}
+    </>
   );
 };
 
