@@ -8,9 +8,9 @@ const EventInfo = () => {
   return (
     <Fragment>
       <Package />
-      {/* <BookCard /> */}
-      {/* <TogetherBooks /> */}
-      {/* <KeywordPicks /> */}
+      <BookCard />
+      <TogetherBooks />
+      <KeywordPicks />
     </Fragment>
   );
 };

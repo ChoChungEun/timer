@@ -1,17 +1,15 @@
 // import TextMore from '@/rdtbiz/components/kds/Button/TextMore'
-import Image from "next/image";
 import React from "react";
-
-import SampleImage from "./image.png";
+import RdtTypography from "@/components/Rdt/atoms/RdtTypography";
 
 const IntoBook = () => {
   return (
-    <section className="flex w-full flex-col gap-5 border-b border-[#EAEAEA] pb-[60px]">
-      <div className="w-full">
-        <span className="text-[20px] font-bold leading-[30px]">책속으로</span>
-      </div>
+    <section className="flex flex-col gap-[40px] border-b border-[#EAEAEA] pb-[40px]">
+      <RdtTypography type="H4" weight="Bold" color="#000000">
+        책속으로
+      </RdtTypography>
       <div className="flex flex-col gap-5">
-        <span className="text-text-l font-normal tracking-[-0.01em] text-[#595959]">
+        <RdtTypography type="B2" weight="Bold" color="#595959">
           물론 이런 생각이 들 수도 있다. ‘이 적은 돈을 모으는 게 무슨 의미가
           있을까? 그냥 내가 사고 싶고 하고 싶은 걸 해서 만족감이라도 얻는 게
           낫지 않을까?’ 하지만 현금 흐름을 살피는 돈 관리는 자산의 많고 적음이
@@ -21,10 +19,10 @@ const IntoBook = () => {
           마련하는 일은 하루아침에 되는 것이 아닌, 오랜 시간과 습관을 필요로
           한다.
           <br />⁃ ‘Q1. 돈이 늘 부족한데 저축을 꼭 해야 할까?’ 중에서
-        </span>
+        </RdtTypography>
         {/* <TextMore text={'펼치기'} /> */}
       </div>
-      <div className="grid h-auto w-full grid-cols-2 gap-6 rounded-[20px] bg-[#F7F7F7] px-[30px] pb-[40px] pt-[36px]">
+      <div className="flex flex-col gap-[24px]">
         {Array.from(Array(4).keys()).map((i) => (
           <ProductItem key={i} />
         ))}
@@ -32,38 +30,35 @@ const IntoBook = () => {
     </section>
   );
 };
+
 const ProductItem = () => {
   return (
-    <section className="flex flex-1 flex-row gap-4">
-      <Image
-        src={SampleImage.src}
-        height={140}
-        width={96}
-        alt={"상품 이미지"}
-      />
-      <div className="flex w-full flex-col gap-1">
-        <span className="font-roboto text-text-xl font-bold">01</span>
-        <div className="flex flex-col gap-2">
-          <div className="flex flex-col gap-1">
-            <span className="text-text-xl font-medium tracking-[-0.01em]">
+    <section className="flex flex-col gap-[8px]">
+      <RdtTypography type="B1" weight="Bold" color="#292929">
+        01
+      </RdtTypography>
+      <section className="flex items-center gap-[16px]">
+        <img src="https://placehold.co/100x148" alt="도서 이미지" />
+        <section className="flex flex-col gap-[8px]">
+          <section className="flex flex-col gap-1">
+            <RdtTypography type="B2" weight="Medium" color="#000000">
               언젠가 우리가
               <br /> 같은 별을 바라본다면
-            </span>
-            <span className="text-text-l font-normal text-[#595959]">
+            </RdtTypography>
+            <RdtTypography type="B3" weight="Regular" color="#595959">
               김호연·나무옆의자
-            </span>
-          </div>
-          <section className="flex w-full flex-row gap-1">
-            <span className="font-roboto text-base font-bold tracking-[-0.01em] text-[#767676]">
-              10%
-            </span>
-            <span className="font-roboto text-base font-bold tracking-[-0.01em] ">
-              21,600
-              <span className="font-normal">원</span>
-            </span>
+            </RdtTypography>
           </section>
-        </div>
-      </div>
+          <section className="flex items-center">
+            <RdtTypography type="B2" weight="Bold" color="#000000">
+              12,150
+            </RdtTypography>
+            <RdtTypography type="B2" weight="Regular" color="#000000">
+              원
+            </RdtTypography>
+          </section>
+        </section>
+      </section>
     </section>
   );
 };

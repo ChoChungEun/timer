@@ -5,17 +5,16 @@ import "swiper/css/free-mode";
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
-import Image from "next/image";
-import SampleImage from "./img_sample.png";
+import RdtTypography from "@/components/Rdt/atoms/RdtTypography";
 
 const BookCard = () => {
   const swiperRef = useRef<SwiperCore | null>(null);
   return (
-    <section className="flex w-full flex-col gap-5">
-      <div className="w-full">
-        <span className="text-[20px] font-bold leading-[30px]">북카드</span>
-      </div>
-      <div className="flex w-full flex-row">
+    <section className="flex flex-col gap-[16px]">
+      <RdtTypography type="H4" weight="Bold" color="#000000">
+        북카드
+      </RdtTypography>
+      <div className="w-[335px] overflow-hidden">
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           spaceBetween={20}
@@ -25,13 +24,8 @@ const BookCard = () => {
         >
           {Array.from(Array(10).keys()).map((i) => (
             <SwiperSlide key={i} style={{ width: "auto" }}>
-              <div className="flex-shrink-0 overflow-hidden rounded-[20px] bg-gray-100">
-                <Image
-                  src={SampleImage.src}
-                  width={397}
-                  height={397}
-                  alt="image"
-                />
+              <div className="flex-shrink-0 overflow-hidden rounded-[20px]">
+                <img src="https://placehold.co/320x328" alt="도서 이미지" />
               </div>
             </SwiperSlide>
           ))}

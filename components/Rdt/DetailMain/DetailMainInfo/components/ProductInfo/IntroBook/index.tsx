@@ -1,6 +1,8 @@
 // import TextMore from '@/rdtbiz/components/kds/Button/TextMore'
 // import Category from '@/rdtbiz/components/kds/Category'
 
+import RdtTypography from "@/components/Rdt/atoms/RdtTypography";
+
 const IntroBook = () => {
   const categoryList = [
     { text: "상품군" },
@@ -16,65 +18,71 @@ const IntroBook = () => {
     { text: "2023년 12월 3주 선정" },
   ];
   return (
-    <section className="flex w-full flex-col gap-5">
-      <div className="w-full">
-        <span className="text-[20px] font-bold leading-[30px]">책소개</span>
-      </div>
-      <div className="flex w-full flex-col gap-[30px]">
-        <section className="flex w-full flex-col gap-3 border-b border-[#EAEAEA] pb-[30px]">
-          <span className="text-base font-bold tracking-[-0.01em]">
+    <section className="flex flex-col gap-[40px]">
+      <RdtTypography type="H4" weight="Bold" color="#000000">
+        책소개
+      </RdtTypography>
+      <div className="flex flex-col gap-[30px]">
+        <section className="flex flex-col gap-[12px] pb-[30px] border-b-[1px] border-[#EAEAEA]">
+          <RdtTypography type="B1" weight="Bold" color="#000000">
             이 책이 속한 분야
-          </span>
+          </RdtTypography>
           {/* <Category categoryList={categoryList} /> */}
         </section>
-        <section className="flex flex-col gap-3 border-b border-[#EAEAEA] pb-[30px]">
-          <span className="text-base font-bold tracking-[-0.01em]">
+        <section className="flex flex-col gap-[12px] pb-[30px] border-b-[1px] border-[#EAEAEA]">
+          <RdtTypography type="B1" weight="Bold" color="#000000">
             리딩지수
-          </span>
-          <div className="flex flex-row gap-6">
-            <div className="flex flex-1 flex-col gap-2 rounded-[8px] bg-[#F7F7F7] p-7">
-              <div className="flex flex-row gap-2 text-base tracking-[-0.01em]">
-                <span className=" font-medium ">AP지수</span>
-                <span className="font-bold text-[#767676]">
+          </RdtTypography>
+          <div className="flex flex-row gap-6 w-[335px] overflow-auto">
+            <div className="flex flex-1 flex-col gap-2 rounded-[8px] bg-[#F7F7F7] p-[24px]">
+              <div className="flex flex-row gap-[8px] w-[max-content]">
+                <RdtTypography type="B1" weight="Medium" color="#000000">
+                  이 책이 속한 분야
+                </RdtTypography>
+                <RdtTypography type="B1" weight="Bold" color="#767676">
                   Children-Grade 4-6
-                </span>
+                </RdtTypography>
               </div>
-              <span className="text-text-m font-normal tracking-[0.01em] text-[#595959]">
+              <RdtTypography type="caption" weight="Regular" color="#767676">
                 도서에 사용된 문장의 평균 길이, 단어 길이, 어휘 수준, 단어수를
                 종합하여 판단한 북 레벨지수로 ATOS 지수 라고 하며, 미국 6만개
                 이상의 학교에서 활용되고 있습니다. 레벨 표현은 Interest Level +
                 0.0 의 형식으로하며, 숫자는 미국 학년을 나타냅니다.
-              </span>
+              </RdtTypography>
             </div>
-            <div className="flex flex-1 flex-col gap-2 rounded-[8px] bg-[#F7F7F7] p-7">
-              <div className="flex flex-row gap-2 text-base tracking-[-0.01em]">
-                <span className=" font-medium ">Lexile지수</span>
-                <span className="font-bold text-[#767676]">660</span>
+            <div className="flex flex-1 flex-col gap-2 rounded-[8px] bg-[#F7F7F7] p-[24px]">
+              <div className="flex flex-row gap-[8px] w-[max-content]">
+                <RdtTypography type="B1" weight="Medium" color="#000000">
+                  이 책이 속한 분야
+                </RdtTypography>
+                <RdtTypography type="B1" weight="Bold" color="#767676">
+                  Children-Grade 4-6
+                </RdtTypography>
               </div>
-              <span className="text-text-m font-normal tracking-[0.01em] text-[#595959]">
-                영어로 쓰여진 지문에 대한 해석 및 총체적인 이해 능력을 측정하는
-                도구로 미국 21개 주에서 공식적인 영어 읽기 능력 평가로 인정받고
-                있습니다. 레벨은 BR(Beginning Reader) 에서 2000L 까지 수치로
-                제공합니다.
-              </span>
+              <RdtTypography type="caption" weight="Regular" color="#767676">
+                도서에 사용된 문장의 평균 길이, 단어 길이, 어휘 수준, 단어수를
+                종합하여 판단한 북 레벨지수로 ATOS 지수 라고 하며, 미국 6만개
+                이상의 학교에서 활용되고 있습니다. 레벨 표현은 Interest Level +
+                0.0 의 형식으로하며, 숫자는 미국 학년을 나타냅니다.
+              </RdtTypography>
             </div>
           </div>
         </section>
-        <section className="flex w-full flex-col gap-3 border-b border-[#EAEAEA] pb-[30px]">
-          <span className="text-base font-bold tracking-[-0.01em]">
+        <section className="flex flex-col gap-[12px] border-b border-[#EAEAEA] pb-[30px]">
+          <RdtTypography type="B1" weight="Bold" color="#000000">
             수상내역 / 미디어 추천
-          </span>
+          </RdtTypography>
           {/* {Array.from(Array(4).keys()).map((_, i) => (
             <Category categoryList={categoryList2} key={i} />
           ))} */}
           {/* <TextMore text={"펼치기"} /> */}
         </section>
-        <section className="flex w-full flex-col gap-3 border-b border-[#EAEAEA] pb-[30px]">
-          <span className="text-base font-bold tracking-[-0.01em]">
+        <section className="flex flex-col gap-[12px] border-b border-[#EAEAEA] pb-[30px]">
+          <RdtTypography type="B1" weight="Bold" color="#000000">
             출발선이 달라도 금융생활은 평등하도록,
             <br />잘 살아가기 위해 꼭 알아야 할 100가지 금융상식
-          </span>
-          <span className="text-text-l font-normal tracking-[0.01em] text-[#595959]">
+          </RdtTypography>
+          <RdtTypography type="B2" weight="Regular" color="#595959">
             미국 퓨리서치센터의 조사 결과에 따르면 “삶에서 가장 가치 있다고
             생각하는 것은 무엇인가"라는 질문에 17개 선진국 중 ‘가족'과 ‘직업'을
             제치고 ‘물질적 행복'을 1순위로 꼽은 것은 한국이 유일했다. 그러는
@@ -95,7 +103,7 @@ const IntroBook = () => {
             모두의 숙제다. 이를 해결하고자 토스는 가장 편리한 금융 서비스인
             동시에 생존에 필수인 ‘돈’에 관해 꼭 필요한 정보를 얻는 곳이 되기
             위해 애쓰고 있다.
-          </span>
+          </RdtTypography>
           {/* <TextMore text={"펼치기"} /> */}
         </section>
       </div>

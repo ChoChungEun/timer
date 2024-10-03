@@ -149,9 +149,10 @@ const ProductItem = () => {
     </div>
   );
 };
+
 const More = () => {
   return (
-    <button className="h-full">
+    <button>
       <Image src={MoreButton.src} width={28} height={28} alt={"더보기 버튼"} />
     </button>
   );

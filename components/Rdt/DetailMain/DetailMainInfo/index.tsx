@@ -9,7 +9,7 @@ const DetailMainInfo = () => {
     <section className="flex flex-col gap-[60px]">
       <LearningInfo />
       <EventInfo />
-      {/* <ProductInfo /> */}
+      <ProductInfo />
       {/* <ReviewInfo /> */}
       {/* <NoticeInfo /> */}
     </section>
