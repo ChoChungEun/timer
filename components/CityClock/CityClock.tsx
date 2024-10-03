@@ -5,6 +5,9 @@ import { cities } from "./cities";
 const CityClock = ({ selectedCity, onSelectedCity }: any) => {
   return (
     <>
+      <div className="w-[20px] h-[20px] bg-[url('./south-korea.png')] bg-cover bg-center bg-no-repeat">
+        clock
+      </div>
       {selectedCity ? (
         <RootStyle
           className="relative flex items-center justify-center border-[1px] h-[100vh]"

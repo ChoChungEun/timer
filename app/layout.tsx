@@ -24,7 +24,7 @@ export default function RootLayout({
         <div className="flex">
           <RecoilProvider>
             <MantineProvider>
-              <Nav />
+              {/* <Nav /> */}
               <div className="w-[100%] h-[100vh]">{children}</div>
             </MantineProvider>
           </RecoilProvider>
