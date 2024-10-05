@@ -8,6 +8,7 @@ import React, { useEffect, useRef } from "react";
 import SwiperCore from "swiper";
 import { Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import RdtTypography from "@/components/Rdt/atoms/RdtTypography";
 
 const ImageSlideView = () => {
   const swiperRef = useRef<SwiperCore | null>(null);
@@ -23,6 +24,7 @@ const ImageSlideView = () => {
       scrollbar.style.width = `${progress}%`;
     }
   };
+
   useEffect(() => {
     if (swiperRef.current) {
       swiperRef.current.on("slideChange", () =>
@@ -30,9 +32,10 @@ const ImageSlideView = () => {
       );
     }
   }, []);
+
   return (
-    <section className="flex w-full flex-col gap-6">
-      <div className="flex w-full flex-row">
+    <section className="flex flex-col gap-6">
+      <div className="flex flex-row w-[330px] overflow-auto">
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           spaceBetween={24}
@@ -52,7 +55,6 @@ const ImageSlideView = () => {
           ))}
         </Swiper>
       </div>
-
       <div className="main-visual-scrollbar">
         <div className="visual-scrollbar-line"></div>
       </div>
@@ -66,13 +68,13 @@ const ProductItem = () => {
       {/* <KdsCheckBox /> */}
       <div className="flex w-[116px] flex-col gap-4">
         <div className="h-[170px] w-[116px] bg-[#F7F7F7]">
-          <img src="hhttps://placehold.co/116x170" alt="상품이미지" />
+          <img src="https://placehold.co/116x170" alt="상품이미지" />
         </div>
         <div className="flex h-[48px] w-full flex-col gap-2 overflow-hidden">
-          <span className="line-clamp-2 overflow-hidden text-ellipsis text-base font-medium tracking-[-0.01em]">
+          <RdtTypography type="B2" weight="Medium" color="#595959" clamp={2}>
             그래머 게이트웨이 베이직: 초보를 위한 기초 영문법(Grammar Gateway
             Basic)
-          </span>
+          </RdtTypography>
         </div>
       </div>
     </div>

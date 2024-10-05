@@ -20,17 +20,17 @@ const ProductInfo = () => {
       <InfoImage />
       <IntroBook />
       <IntoBook />
-      {/* <PubReview /> */}
-      {/* <Recommend /> */}
-      {/* <BookTrailer /> */}
-      {/* <TranslationContents /> */}
-      {/* <BookSeries /> */}
-      {/* <BookComposition /> */}
-      {/* <PersonalInfo /> */}
-      {/* <WriterComments /> */}
-      {/* <BookIndex /> */}
-      {/* <BasicInfo /> */}
-      {/* <BookEvent /> */}
+      <PubReview />
+      <Recommend />
+      <BookTrailer />
+      <TranslationContents />
+      <BookSeries />
+      <BookComposition />
+      <PersonalInfo />
+      <WriterComments />
+      <BookIndex />
+      <BasicInfo />
+      <BookEvent />
     </Fragment>
   );
 };

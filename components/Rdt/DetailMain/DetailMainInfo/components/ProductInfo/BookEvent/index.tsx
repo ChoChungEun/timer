@@ -1,50 +1,44 @@
-import Image from 'next/image'
-import SampleImage from './img_sample.png'
+import Image from "next/image";
+import SampleImage from "./img_sample.png";
+import RdtTypography from "@/components/Rdt/atoms/RdtTypography";
 
 const BookEvent = () => {
   return (
-    <section className='flex w-full flex-col gap-5'>
-      <div className='w-full justify-between'>
-        <div className='flex flex-col gap-1'>
-          <span className='text-title-s font-bold'>이 책의 이벤트</span>
-          <span className='text-text-l font-roboto font-normal tracking-[-0.01em] text-[#767676]'>
-            해외주문/바로드림/제휴사주문/업체배송 건의 경우 1+1 증정상품이
-            발송되지 않습니다.
-          </span>
-        </div>
+    <section className="flex flex-col gap-[20px]">
+      <div className="flex justify-between">
+        <RdtTypography type="H4" weight="Bold" color="#000000">
+          이 책의 이벤트
+        </RdtTypography>
+        <button>
+          <RdtTypography type="B3" weight="Medium" color="#595959">
+            더보기 +
+          </RdtTypography>
+        </button>
       </div>
-      <div className='grid grid-cols-3 gap-5'>
+      <div className="flex gap-[8px] w-[330px] overflow-auto">
         {Array.from(Array(6).keys()).map((_, i) => (
           <EventItem key={i} />
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
 const EventItem = () => {
   return (
-    <section className='flex w-[258px] flex-col gap-4'>
-      <div className='relative overflow-hidden rounded-2xl'>
-        <Image
-          src={SampleImage.src}
-          layout='responsive'
-          width={258}
-          height={143}
-          alt={'이벤트 상품 이미지'}
-          objectFit='cover'
-        />
+    <section className="flex w-[258px] flex-col gap-4">
+      <div className="relative overflow-hidden rounded-2xl">
+        <img src="https://placehold.co/258x143" alt="이벤트 상품 이미지" />
       </div>
-
-      <div className='flex flex-col gap-1'>
-        <span className='text-text-xl font-medium tracking-[-0.01em]'>
+      <div className="flex flex-col gap-[2px]">
+        <RdtTypography type="B2" weight="Medium" color="#000000">
           [가이드북 특별 기획전] 내가 여행을 떠나는 101가지 이유
-        </span>
-        <span className='text-text-m font-normal tracking-[-0.01em] text-[#595959]'>
+        </RdtTypography>
+        <RdtTypography type="B3" weight="Regular" color="#595959">
           2024/07/04 ~ 2024/07/31
-        </span>
+        </RdtTypography>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default BookEvent
+export default BookEvent;

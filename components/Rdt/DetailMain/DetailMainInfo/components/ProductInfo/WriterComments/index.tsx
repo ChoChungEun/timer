@@ -1,17 +1,19 @@
 // import TextMore from '@/rdtbiz/components/kds/Button/TextMore'
 
+import RdtTypography from "@/components/Rdt/atoms/RdtTypography";
+
 const WriterComments = () => {
   return (
-    <section className="flex w-full flex-col gap-5 border-b border-[#DCDDEF] pb-[60px]">
-      <div className="w-full">
-        <span className="text-title-s font-bold">작가의 말</span>
-      </div>
+    <section className="flex flex-col gap-5 border-b border-[#DCDDEF] pb-[60px]">
+      <RdtTypography type="H4" weight="Bold" color="#000000">
+        작가의 말
+      </RdtTypography>
       <div className="flex flex-col gap-3">
-        <span className="text-text-xl font-bold tracking-[-0.01em]">
+        <RdtTypography type="B1" weight="Bold" color="#000000">
           출발선이 달라도 금융생활은 평등하도록,
           <br />잘 살아가기 위해 꼭 알아야 할 100가지 금융상식
-        </span>
-        <span className="text-text-l font-normal tracking-[-0.01em] text-[#595959]">
+        </RdtTypography>
+        <RdtTypography type="B2" weight="Regular" color="#595959">
           미국 퓨리서치센터의 조사 결과에 따르면 “삶에서 가장 가치 있다고
           생각하는 것은 무엇인가"라는 질문에 17개 선진국 중 ‘가족'과 ‘직업'을
           제치고 ‘물질적 행복'을 1순위로 꼽은 것은 한국이 유일했다. 그러는 한편
@@ -34,7 +36,7 @@ const WriterComments = () => {
           모두의 숙제다. 이를 해결하고자 토스는 가장 편리한 금융 서비스인 동시에
           생존에 필수인 ‘돈’에 관해 꼭 필요한 정보를 얻는 곳이 되기 위해 애쓰고
           있다.
-        </span>
+        </RdtTypography>
         {/* <TextMore text={'펼치기'} /> */}
       </div>
     </section>
