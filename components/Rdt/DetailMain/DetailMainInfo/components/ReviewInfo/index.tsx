@@ -6,7 +6,7 @@ const ReviewInfo = () => {
   return (
     <Fragment>
       <BookReview />
-      {/* <CollectText /> */}
+      <CollectText />
     </Fragment>
   );
 };

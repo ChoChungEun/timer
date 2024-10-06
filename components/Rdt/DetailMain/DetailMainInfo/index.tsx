@@ -11,7 +11,7 @@ const DetailMainInfo = () => {
       <EventInfo />
       <ProductInfo />
       <ReviewInfo />
-      {/* <NoticeInfo /> */}
+      <NoticeInfo />
     </section>
   );
 };
