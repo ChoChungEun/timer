@@ -7,7 +7,7 @@ const BookComposition = () => {
         <RdtTypography type="H4" weight="Bold" color="#000000">
           이 책의 상품구성
         </RdtTypography>
-        <div className="flex gap-[4px]">
+        <div className="flex gap-[4px] items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="6"
@@ -27,7 +27,7 @@ const BookComposition = () => {
         <ul>
           <li className="flex flex-col gap-[4px] border-b-[1px] border-[#EAEAEA] py-[20px] px-[4px]">
             <RdtTypography type="B2" weight="Regular" color="#000000">
-              그레이의 50가지 그림자 10권
+              <span className="underline">그레이의 50가지 그림자 10권</span>
             </RdtTypography>
             <RdtTypography type="B2" weight="Regular" color="#767676">
               E.L 제임스
@@ -41,7 +41,7 @@ const BookComposition = () => {
           </li>
           <li className="flex flex-col gap-[4px] border-b-[1px] border-[#EAEAEA] py-[20px] px-[4px]">
             <RdtTypography type="B2" weight="Regular" color="#000000">
-              그레이의 50가지 그림자 10권
+              <span className="underline">그레이의 50가지 그림자 10권</span>
             </RdtTypography>
             <RdtTypography type="B2" weight="Regular" color="#767676">
               E.L 제임스

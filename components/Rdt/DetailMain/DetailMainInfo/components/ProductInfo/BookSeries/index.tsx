@@ -11,7 +11,7 @@ const BookSeries = () => {
   const [isTextViewMode, setIsTextViewMode] = useState(false);
 
   return (
-    <section className="flex flex-col gap-5 rounded-[20px] border border-[#F7F7F7]">
+    <section className="flex flex-col rounded-[20px] border border-[#F7F7F7]">
       <BookSeriesHeader
         setIsTextViewMode={setIsTextViewMode}
         isTextViewMode={isTextViewMode}
