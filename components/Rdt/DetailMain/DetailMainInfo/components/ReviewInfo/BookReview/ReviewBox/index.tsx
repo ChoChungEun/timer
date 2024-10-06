@@ -5,10 +5,11 @@ import ReviewTab from "./ReviewTab";
 
 const ReviewBox = () => {
   return (
-    <section className="flex w-full flex-col gap-6">
+    <section className="flex flex-col gap-6">
       <ReviewNav />
       <CloverReview />
-      <RdtreeReview />
+      {/* 모바일에서 사용안하는 듯 확인 필요 */}
+      {/* <RdtreeReview />' */}
       <ReviewTab />
     </section>
   );

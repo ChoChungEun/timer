@@ -25,9 +25,9 @@ const BookEvent = () => {
 };
 const EventItem = () => {
   return (
-    <section className="flex w-[258px] flex-col gap-4">
+    <section className="flex w-[340px] flex-col gap-4">
       <div className="relative overflow-hidden rounded-2xl">
-        <img src="https://placehold.co/258x143" alt="이벤트 상품 이미지" />
+        <img src="https://placehold.co/340x143" alt="이벤트 상품 이미지" />
       </div>
       <div className="flex flex-col gap-[2px]">
         <RdtTypography type="B2" weight="Medium" color="#000000">

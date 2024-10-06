@@ -3,28 +3,29 @@ import Image from "next/image";
 import ReviewIcon from "./icon_review.png";
 import ReviewBox from "./ReviewBox";
 import ReviewList from "./ReviewList";
+import RdtTypography from "@/components/Rdt/atoms/RdtTypography";
 
 const BookReview = () => {
   return (
-    <section className="flex w-full flex-col">
-      <div className="flex w-full items-center justify-between pb-7">
-        <div className="flex flex-row gap-2">
-          <span className="text-title-s font-bold tracking-[-0.01em]">
+    <section className="flex flex-col w-[335px]">
+      <div className="flex flex-col gap-[20px]">
+        <div className="flex flex-row gap-[8px]">
+          <RdtTypography type="H4" weight="Bold" color="#000000">
             리뷰(135)
-          </span>
+          </RdtTypography>
           {/* todo 느낌표 아이콘 */}
         </div>
-        <button className="h-[38px] rounded-[8px] bg-black px-[14px] py-[9px]">
-          <div className="flex flex-row items-center gap-1">
+        <button className="h-[44px] rounded-[8px] bg-black flex items-center justify-center">
+          <div className="flex flex-row items-center gap-[4px]">
             <Image
               src={ReviewIcon.src}
               width={16}
               height={16}
-              alt={"review icon"}
+              alt="리뷰 아이콘"
             />
-            <span className="text-text-l font-medium tracking-[-0.01em] text-white">
+            <RdtTypography type="B2" weight="Bold" color="#FFFFFF">
               리뷰 작성
-            </span>
+            </RdtTypography>
           </div>
         </button>
       </div>

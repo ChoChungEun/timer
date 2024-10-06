@@ -1,19 +1,20 @@
+import RdtTypography from "@/components/Rdt/atoms/RdtTypography";
+
 const ReviewNav = () => {
   return (
-    <div className='flex w-full items-end justify-start'>
-      <div className=' h-11 w-40 cursor-pointer rounded-tl-lg rounded-tr-lg border-x border-t border-black bg-white py-[11px] text-center'>
-        <span className='text-text-l font-medium tracking-[-0.01em]'>
+    <div className="flex items-end justify-start border-b-[1px] boeder-[#EAEAEA]">
+      <button className="flex items-center justify-center h-[48px] flex-grow border-b-[1px] border-[#000000] bg-white text-center">
+        <RdtTypography type="B1" weight="Bold" color="#000000">
           Klover 리뷰(120)
-        </span>
-      </div>
-      <div className=' h-11 w-40 cursor-pointer rounded-tl-lg rounded-tr-lg border-x border-b border-t border-gray-400 border-b-black bg-white py-[11px] text-center'>
-        <span className='text-text-l font-normal tracking-[-0.01em] text-[#767676]'>
+        </RdtTypography>
+      </button>
+      <button className="flex items-center justify-center h-[48px] flex-grow border-b-[1px] border-[#EAEAEA] bg-white text-center">
+        <RdtTypography type="B1" weight="Regular" color="#767676">
           리딩트리 리뷰(15)
-        </span>
-      </div>
-      <div className='h-[1px] flex-1 bg-[#000000]' />
+        </RdtTypography>
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default ReviewNav
+export default ReviewNav;

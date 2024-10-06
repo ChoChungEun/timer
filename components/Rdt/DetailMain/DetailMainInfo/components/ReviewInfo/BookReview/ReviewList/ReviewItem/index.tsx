@@ -8,6 +8,7 @@ import Badge, { BadgeColor } from "@/components/Rdt/atoms/Badge";
 import CloverList from "@/components/Rdt/atoms/CloverList";
 import ReviewImage from "./ReviewImage";
 import ReplySection from "./ReplySection";
+import RdtTypography from "@/components/Rdt/atoms/RdtTypography";
 
 const ReviewItem = () => {
   const BadgeList: { title: string; color: BadgeColor }[] = [
@@ -15,21 +16,21 @@ const ReviewItem = () => {
     { title: "구매자", color: "gray" },
   ];
   return (
-    <section className="flex flex-col gap-4 border-b border-[#EAEAEA] px-3 py-6">
-      <div className="flex w-full justify-between">
-        <div className="flex flex-row gap-2">
-          <div className="flex flex-row items-center justify-center gap-1">
+    <section className="flex flex-col gap-4 border-b border-[#EAEAEA] px-3">
+      <div className="flex flex-col gap-[6px]">
+        <div className="flex flex-row items-center gap-[8px]">
+          <div className="flex items-center gap-[4px]">
             {BadgeList.map((el, i) => (
               <Badge {...el} key={i} />
             ))}
-            <span className="text-text-m font-roboto font-normal tracking-[-0.01em] text-[#767676]">
-              mm********
-            </span>
-            <div className="h-2 w-[1px] bg-[#CCCCCC]" />
-            <span className="text-text-m font-roboto font-normal tracking-[-0.01em] text-[#767676]">
-              2024.07.15
-            </span>
           </div>
+          <RdtTypography type="B3" weight="Regular" color="#767676">
+            mm********
+          </RdtTypography>
+          <div className="h-2 w-[1px] bg-[#CCCCCC]" />
+          <RdtTypography type="B3" weight="Regular" color="#767676">
+            2024.07.15
+          </RdtTypography>
         </div>
         <div className="flex flex-row gap-1">
           <CloverList rate={4} />
@@ -40,19 +41,18 @@ const ReviewItem = () => {
               height={14}
               alt={"review icon"}
             />
-            <span className="text-text-l font-medium tracking-[-0.01em] text-[#474C98]">
+            <RdtTypography type="B2" weight="Medium" color="#474C98">
               좋았어요
-            </span>
+            </RdtTypography>
           </div>
         </div>
       </div>
-
       <div className="flex flex-col gap-4">
-        <div className="flex w-full justify-between">
-          <span className="text-text-l font-normal tracking-[-0.01em]">
+        <div className="flex justify-between">
+          <RdtTypography type="B2" weight="Regular" color="#000000">
             배송도 빠르고 너무나 좋습니다.^^
             <br /> 배송도 빠르고 너무나 좋습니다.^^
-          </span>
+          </RdtTypography>
           <div className="relative h-16 w-16 overflow-hidden rounded-lg">
             <Image
               src={SampleImage.src}
@@ -61,28 +61,29 @@ const ReviewItem = () => {
             />
           </div>
         </div>
-        <ReviewImage />
+        {/* <ReviewImage /> */}
       </div>
-
-      <div className="flex w-full justify-between">
+      <div className="flex flex-col">
         {/* <TextMore text={'펼치기'} /> */}
         <div className="flex flex-row gap-2.5">
           <div className="flex flex-row items-center gap-[2px]">
             <div className="relative h-6 w-6 items-center">
               <Image src={LikeIcon.src} layout={"fill"} alt={"좋아요 아이콘"} />
             </div>
-            <span className="font-roboto text-text-l font-normal tracking-[-0.01em] text-[#595959]">
+            <RdtTypography type="B2" weight="Bold" color="#474C98">
               234
-            </span>
+            </RdtTypography>
           </div>
           <div className="flex flex-row  gap-[2px]">
             <div className="relative h-6 w-6 items-center">
               <Image src={ReplyIcon.src} layout={"fill"} alt={"댓글 아이콘"} />
             </div>
-
-            <span className="font-roboto text-text-l inline-flex items-center whitespace-nowrap font-normal tracking-[-0.01em] text-[#595959]">
-              답글 10
-            </span>
+            <RdtTypography type="B2" weight="Regular" color="#767676">
+              댓글
+            </RdtTypography>
+            <RdtTypography type="B2" weight="Regular" color="#767676">
+              234
+            </RdtTypography>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ const DetailMainInfo = () => {
       <LearningInfo />
       <EventInfo />
       <ProductInfo />
-      {/* <ReviewInfo /> */}
+      <ReviewInfo />
       {/* <NoticeInfo /> */}
     </section>
   );
